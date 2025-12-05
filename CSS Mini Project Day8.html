@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Task 1 */
+    .card {
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 12px;
+      background: blue;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    /* Task 2 */
+    .features {
+      display: flex;
+      flex-wrap: wrap;      /* Makes it responsive */
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Each card */
+    .feature-card {
+      flex: 1;              /* Basic flex */
+      min-width: 250px;     /* Helps in wrapping on small screens */
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* Make the 2nd card grow more */
+    .feature-card:nth-child(2) {
+      flex-grow: 2;
+    }
+
+    /* Align icon/image */
+    .feature-card img {
+      width: 100px;
+      height: 100px;
+      align-self: center;   /* aligns image vertically */
+      margin-bottom: 10px;
+    }
+
+    /* Task 3 */
+     .cards {
+      display: flex;
+      flex-wrap: wrap;   /* makes it responsive */
+      gap: 15px;
+    }
+
+    .card1 {
+      flex-basis: 250px; /* card width */
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .card1 img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      align-self: center;  /* alignment */
+    }
+
+    .card1:nth-child(2) {
+      align-self: flex-start;  /* example alignment adjustment */
+    }
+
+    .btn1 {
+      display: inline-block;
+      padding: 6px 12px;
+      background: blue;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    /* Task 4 */
+    .grid {
+      display: flex;
+      flex-wrap: wrap;   /* responsive */
+      gap: 15px;         /* space between cards */
+    }
+
+    .item {
+      flex-basis: 200px; /* card width */
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .big {
+      flex-grow: 2;      /* featured product grows more */
+    }
+
+    .content {
+      display: flex;             /* nested flexbox */
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .photo {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .price-box {
+      display: flex;             /* nested flexbox inside card */
+      justify-content: space-between;
+    }
+
+    .btn2 {
+      background: blue;
+      color: white;
+      padding: 4px 8px;
+      text-decoration: none;
+    }
+    /* Task 5 */
+    .plans {
+      display: flex;
+      gap: 15px;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .plan {
+      flex-basis: 220px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      background: #f7f7f7;
+      transition: transform 0.2s;
+    }
+
+    /* Middle plan bigger */
+    .middle {
+      flex-grow: 2;
+      background: linear-gradient(#dfeaff, #ffffff);
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    /* Hover effect */
+    .plan:hover {
+      transform: scale(1.05);
+    }
+
+    .p-title {
+      font-size: 18px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .p-price {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .p-btn {
+      background: blue;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* Task 6 */
+    .navbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: #f2f2f2;
+    flex-wrap: wrap; /* makes navbar responsive */
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navlinks {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* space between links */
+    padding: 0;
+    margin: 0;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: #333;
+}
+
+.navbtn {
+    padding: 8px 15px;
+    border: none;
+    background: #008cff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navbtn:hover {
+    opacity: 0.8;
+}
+
+/* Task 7 */
+.contact-flexbox {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* responsive stacking */
+}
+
+.contact-left, .contact-right {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.contact-left form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Task 8 */
+.news-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.news-box {
+    max-width: 800px;
+    width: 100%;
+    background: linear-gradient(90deg, #4b79ff, #6b9bff);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.news-text {
+    font-size: 18px;
+    margin: 0;
+}
+
+.news-form {
+    display: flex;
+    gap: 10px;
+}
+
+.news-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.news-form button {
+    padding: 10px 15px;
+    border: none;
+    background: #003cff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.news-form button:hover {
+    opacity: 0.8;
+}
+  </style>
+</head>
+<body>
+    <h3>Project 1:Simple Card Layout</h3>
+     <div class="card">
+    <img src="https://picsum.photos/200/150" alt="Image">
+    <h3>Card Title</h3>
+    <p>This is a simple card with an image, title, text, and button.</p>
+    <a href="#" class="btn">Read More</a>
+  </div>
+
+  <h3>Project 2:Feature Section</h3>
+   <section class="features">
+
+    <!-- Card 1 -->
+    <div class="feature-card">
+      <img src="Toy.jpg" alt="icon">
+      <h3>Fast Performance</h3>
+      <p>Experience lightning-fast load times.</p>
+    </div>
+
+    <!-- Card 2 (grows more) -->
+    <div class="feature-card">
+      <img src="Alphabets.jpg" alt="icon">
+      <h3>Secure Platform</h3>
+      <p>Enhanced security to protect data.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="feature-card">
+      <img src="Numbers.jpg" alt="icon">
+      <h3>Easy Integration</h3>
+      <p>Seamless Integartion with your tools</p>
+    </div>
+
+  </section>
+
+  <h3>Project 3:Responsive Card Layout</h3>
+  <div class="cards">
+
+    <div class="card1">
+      <img src="girl1.jpg">
+      <h3>Card One</h3>
+      <p>Simple responsive card.</p>
+      <a href="#" class="btn1">Open</a>
+    </div>
+
+    <div class="card1">
+      <img src="girl2.jpg">
+      <h3>Card Two</h3>
+      <p>Uses flex-basis and flex-wrap.</p>
+      <a href="#" class="btn1">Open</a>
+    </div>
+
+    <div class="card1">
+      <img src="boy1.jpg">
+      <h3>Card Three</h3>
+      <p>Very simple layout.</p>
+      <a href="#" class="btn1">Open</a>
+    </div>
+
+  </div>
+
+  <h3>Project 4:Responsive Product</h3>
+   <div class="grid">
+
+    <div class="item">
+      <div class="content">
+        <img class="photo" src="headphone.jpg">
+        <h4>Product 1</h4>
+        <div class="price-box">
+          <span>₹499</span>
+          <a class="btn2" href="#">Buy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="item big">
+      <div class="content">
+        <img class="photo" src="watch.jpg">
+        <h4>Featured</h4>
+        <div class="price-box">
+          <span>₹799</span>
+          <a class="btn2" href="#">Buy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <img class="photo" src="clock.jpg">
+        <h4>Product 3</h4>
+        <div class="price-box">
+          <span>₹399</span>
+          <a class="btn2" href="#">Buy</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h3>Project 5:Pricing Table Layout</h3>
+  <div class="plans">
+
+    <div class="plan">
+      <div class="p-title">Basic</div>
+      <div class="p-price">₹299</div>
+      <p>Starter features</p>
+      <a class="p-btn" href="#">Select</a>
+    </div>
+
+    <div class="plan middle">
+      <div class="p-title">Pro</div>
+      <div class="p-price">₹499</div>
+      <p>Most popular plan</p>
+      <a class="p-btn" href="#">Select</a>
+    </div>
+
+    <div class="plan">
+      <div class="p-title">Premium</div>
+      <div class="p-price">₹799</div>
+      <p>All premium features</p>
+      <a class="p-btn" href="#">Select</a>
+    </div>
+
+  </div>
+
+  <h3>Project 6:Flexbox Navigation Bar</h3>
+  <nav class="navbox">
+    <div class="brand">MyLogo</div>
+
+    <ul class="navlinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <button class="navbtn">Sign Up</button>
+</nav>
+
+<h3>Project 7:FlexBox Contact Section</h3>
+<section class="contact-flexbox">
+
+    <div class="contact-left">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <div class="contact-right">
+        <h3>Get in Touch</h3>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Email:</strong> info@example.com</p>
+        <p><strong>Address:</strong> 123, Main Street, Chennai</p>
+    </div>
+
+</section>
+
+<h3>Project 8:NewsLetter Sign Up Banner</h3>
+<section class="news-wrap">
+    <div class="news-box">
+
+        <p class="news-text">Subscribe to our Newsletter</p>
+
+        <div class="news-form">
+            <input type="email" placeholder="Enter your email">
+            <button>Join</button>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
