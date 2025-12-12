@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Project 1 */
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f1f1;
+}
+
+/* HEADER */
+.top-header {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* GRID LAYOUT */
+.layout-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+/* ARTICLE BOX */
+.articles-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.single-article {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.single-article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* SIDEBAR BOX */
+.side-widget {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .layout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Project 2---------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    padding: 20px;
+}
+
+.product-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #333;
+}
+
+/* GRID */
+.product-grid-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* PRODUCT CARD */
+.product-card-box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: transform .3s ease;
+}
+
+.product-card-box:hover {
+    transform: scale(1.05);
+}
+
+.product-card-box img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-card-box h2 {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+.product-card-box p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.buy-btn {
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buy-btn:hover {
+    background: #218838;
+}
+
+
+/* Project 3 -------------------------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    padding: 20px;
+}
+
+.gallery-heading {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 30px;
+    color: #333;
+}
+
+/* GRID LAYOUT */
+.gallery-grid-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* GALLERY ITEM */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SPECIAL SPANS */
+.big-wide {
+    grid-column: span 2;
+}
+
+.tall-photo {
+    grid-row: span 2;
+}
+
+.big-square {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* RESPONSIVE FIX */
+@media(max-width: 600px) {
+    .big-wide,
+    .tall-photo,
+    .big-square {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+
+
+/* Project 4 ------------------------------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* GRID LAYOUT */
+.dash-container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 60px 1fr 40px;
+    height: 100vh;
+}
+
+/* HEADER */
+.dash-topbar {
+    grid-column: 1 / 3;
+    background: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* SIDEBAR */
+.dash-sidebar {
+    background: #222;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.side-btn {
+    width: 100%;
+    padding: 10px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.side-btn:hover {
+    background: #555;
+}
+
+/* MAIN CONTENT */
+.dash-main {
+    padding: 25px;
+    background: #f5f5f5;
+}
+
+/* NESTED FLEXBOX */
+.dash-cards-row {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.dash-card {
+    flex: 1;
+    background: #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* FOOTER */
+.dash-footer {
+    grid-column: 1 / 3;
+    background: #333;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+
+/* Project 5------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+}
+
+/* GRID TEMPLATE LAYOUT */
+.admin-grid-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 60px 1fr 40px;
+
+    grid-template-areas:
+        "nav nav"
+        "sidebar content"
+        "footer footer";
+
+    height: 100vh;
+}
+
+/* NAVBAR */
+.admin-topnav {
+    grid-area: nav;
+    background: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+/* SIDEBAR */
+.admin-sidebar {
+    grid-area: sidebar;
+    background: #222;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.admin-sidebar a {
+    color: #fff;
+    text-decoration: none;
+    background: #444;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.admin-sidebar a:hover {
+    background: #555;
+}
+
+/* CONTENT */
+.admin-content {
+    grid-area: content;
+    padding: 25px;
+}
+
+/* WIDGETS USING NESTED GRID */
+.admin-widgets {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.admin-widget {
+    background: #fff;
+    padding: 20px;
+    height: 120px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FOOTER */
+.admin-footer {
+    grid-area: footer;
+    background: #333;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RESPONSIVE: COLLAPSE SIDEBAR */
+@media (max-width: 768px) {
+
+    .admin-grid-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "nav"
+            "content"
+            "footer";
+    }
+
+    .admin-sidebar {
+        display: none;
+    }
+}
+
+
+/* Project 6------------------------------------------------------------------- */
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    padding: 20px;
+}
+
+.course-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* GRID */
+.course-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* COURSE BOX */
+.course-box {
+    background: #f2f2f2;
+    padding: 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.course-box:hover {
+    background: #e0e0e0;
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+    background: #ccc;
+    height: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #4caf50;
+}
+
+
+/* Project 7-------------------------------------------------- */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #fff;
+}
+
+.list-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* GRID */
+.list-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+}
+
+/* CARDS */
+.list-card {
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* BIG CARD SPANNING */
+.big-card {
+    grid-row: span 2;
+}
+
+.list-card h3 {
+    margin: 10px 0 5px;
+}
+
+.list-card p {
+    font-size: 14px;
+}
+
+
+/* Project 8 */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #fff;
+}
+
+.faq-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* GRID LAYOUT */
+.faq-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* FAQ BOXES */
+.faq-box {
+    background: #f2f2f2;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.faq-box summary {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px;
+    background: #d60000;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.faq-box p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width: 600px) {
+    .faq-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+  <!-- Project 1   -->
+   <h3>Project 1:Blog Layout</h3>
+   <header class="top-header">
+        <h1>My Blog</h1>
+    </header>
+
+    <div class="layout-grid">
+
+        <div class="articles-box">
+            <div class="single-article">
+                <h2>Article 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+            </div>
+
+            <div class="single-article">
+                <h2>Article 2</h2>
+                <p>Quisque ac justo et eros scelerisque laoreet. Fusce non neque id purus.</p>
+            </div>
+
+            <div class="single-article">
+                <h2>Article 3</h2>
+                <p>Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus.</p>
+            </div>
+        </div>
+
+        <aside class="side-widget">
+            <h2>Sidebar</h2>
+            <p>Related content, categories, or advertisements can go here.</p>
+        </aside>
+
+    </div>
+
+    <h3>Project 2:Product Showcase</h3>
+     <h1 class="product-title">Product Showcase</h1>
+
+    <div class="product-grid-box">
+
+        <div class="product-card-box">
+            <img src="watch.jpg" alt="Product 1">
+            <h2>Product 1</h2>
+            <p>High quality and durable product.</p>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        <div class="product-card-box">
+            <img src="car.jpg" alt="Product 2">
+            <h2>Product 2</h2>
+            <p>Best selling and affordable.</p>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        <div class="product-card-box">
+            <img src="fashion1.jpg" alt="Product 3">
+            <h2>Product 3</h2>
+            <p>Stylish design with great performance.</p>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+        <div class="product-card-box">
+            <img src="globe.jpg" alt="Product 4">
+            <h2>Product 4</h2>
+            <p>High performance and premium quality.</p>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+
+    </div>
+
+
+    <!-- Project 3 -->
+     <h3>Project 3:Responsive Photo Gallery</h3>
+     <h1 class="gallery-heading">Responsive Photo Gallery</h1>
+
+    <div class="gallery-grid-container">
+
+        <div class="gallery-item big-wide">
+            <img src="Toy.jpg" alt="Photo">
+        </div>
+
+        <div class="gallery-item">
+            <img src="Alphabets.jpg" alt="Photo">
+        </div>
+
+        <div class="gallery-item tall-photo">
+            <img src="Numbers.jpg" alt="Photo">
+        </div>
+
+        <div class="gallery-item">
+            <img src="apple.jpg" alt="Photo">
+        </div>
+
+        <div class="gallery-item big-square">
+            <img src="birthday party.jpg" alt="Photo">
+        </div>
+
+        <div class="gallery-item">
+            <img src="food.jpg" alt="Photo">
+        </div>
+
+    </div>
+
+<!-- Project 4 -->
+ <h3>Project 4:Dashboard Container</h3>
+ <div class="dash-container">
+
+        <!-- HEADER -->
+        <header class="dash-topbar">
+            Dashboard
+        </header>
+
+        <!-- SIDEBAR -->
+        <aside class="dash-sidebar">
+            <button class="side-btn">Home</button>
+            <button class="side-btn">Reports</button>
+            <button class="side-btn">Settings</button>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="dash-main">
+            <h2>Main Content</h2>
+
+            <div class="dash-cards-row">
+                <div class="dash-card">Card 1</div>
+                <div class="dash-card">Card 2</div>
+                <div class="dash-card">Card 3</div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="dash-footer">
+            © 2025 Dashboard Inc.
+        </footer>
+
+    </div>
+
+
+    <h3>Project 5:Admin Panel Grid</h3>
+    <div class="admin-grid-layout">
+
+        <!-- NAVBAR -->
+        <nav class="admin-topnav">
+            <h1>Admin Panel</h1>
+        </nav>
+
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar">
+            <a href="#">Dashboard</a>
+            <a href="#">Users</a>
+            <a href="#">Reports</a>
+            <a href="#">Settings</a>
+        </aside>
+
+        <!-- CONTENT AREA -->
+        <main class="admin-content">
+            <h2>Dashboard Widgets</h2>
+
+            <div class="admin-widgets">
+                <div class="admin-widget">Widget 1</div>
+                <div class="admin-widget">Widget 2</div>
+                <div class="admin-widget">Widget 3</div>
+                <div class="admin-widget">Widget 4</div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="admin-footer">
+            © 2025 Admin Panel. All rights reserved.
+        </footer>
+
+    </div>
+
+
+    <h3>Project 6: E-learning Project Layout</h3>
+     <h2 class="course-heading">E-Learning Courses</h2>
+
+    <div class="course-grid">
+        
+        <div class="course-box">
+            <img src="java.jfif" alt="Course 1">
+            <h3>Course 1</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 70%;"></div>
+            </div>
+        </div>
+
+        <div class="course-box">
+            <img src="html.jfif" alt="Course 2">
+            <h3>Course 2</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 40%;"></div>
+            </div>
+        </div>
+
+        <div class="course-box">
+            <img src="python.jfif" alt="Course 3">
+            <h3>Course 3</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 90%;"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <h3>Project 7:Real Estate Listing Grid</h3>
+    <h2 class="list-heading">Real Estate Listings</h2>
+
+    <div class="list-grid">
+
+        <div class="list-card big-card">
+            <img src="villa.jpg" alt="">
+            <h3>$250,000</h3>
+            <p>3 BHK independent villa with private garden.</p>
+        </div>
+
+        <div class="list-card">
+            <img src="beach house.jpg" alt="">
+            <h3>$120,000</h3>
+            <p>2 BHK apartment near city center.</p>
+        </div>
+
+        <div class="list-card">
+            <img src="luxury apartment.jpg" alt="">
+            <h3>$150,000</h3>
+            <p>2 BHK modern home with balcony.</p>
+        </div>
+
+        <div class="list-card">
+            <img src="modern flat.jpg" alt="">
+            <h3>$300,000</h3>
+            <p>Luxury villa with pool and parking.</p>
+        </div>
+
+    </div>
+
+
+
+    <h3>Project 8:FAQ Section</h3>
+    <h2 class="faq-heading">Frequently Asked Questions</h2>
+
+<div class="faq-container">
+
+    <details class="faq-box">
+        <summary>What is the return policy?</summary>
+        <p>You can return products within 7 days of delivery.</p>
+    </details>
+
+    <details class="faq-box">
+        <summary>Do you offer home delivery?</summary>
+        <p>Yes, we offer delivery across major cities.</p>
+    </details>
+
+    <details class="faq-box">
+        <summary>How can I contact support?</summary>
+        <p>Contact us at support@example.com.</p>
+    </details>
+
+    <details class="faq-box">
+        <summary>Are the products original?</summary>
+        <p>Yes, all products are genuine and verified.</p>
+    </details>
+
+</div>
+
+
+</body>
+</html>
