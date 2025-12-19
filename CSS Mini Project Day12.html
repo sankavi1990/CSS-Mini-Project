@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Project Day 12</title>
+    <style>
+        /* Mini Project 1 - Progress Bar Animation */
+
+.mp1-progress-container {
+    width: 300px;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mp1-progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #4caf50;
+    animation: mp1-fill 3s forwards;
+}
+
+@keyframes mp1-fill {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}
+/* Project 2 */
+/* Mini Project 2 - Responsive Landing Page */
+
+.mp2-landing {
+    min-height: 100vh;
+    background: url("Toy.jpg") center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.mp2-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.mp2-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Button Animation */
+.mp2-btn {
+    position: relative;
+    padding: 12px 25px;
+    border: none;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s;
+}
+
+.mp2-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Tooltip */
+.mp2-tooltip {
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.mp2-btn:hover .mp2-tooltip {
+    opacity: 1;
+}
+
+/* Modal Animation */
+.mp2-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+
+.mp2-landing:hover .mp2-modal {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mp2-modal-box {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    animation: mp2-popup 0.4s ease;
+}
+
+/* Modal animation */
+@keyframes mp2-popup {
+    from {
+        transform: scale(0.7);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .mp2-title {
+        font-size: 28px;
+    }
+}
+/* Project 3 */
+/* Mini Project 3 - Button Hover Effects */
+
+.mp3-btn-container {
+    background: linear-gradient(to right, #4facfe, #43e97b);
+    padding: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Common button style */
+.mp3-btn {
+    padding: 12px 22px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Individual buttons */
+.mp3-primary {
+    background-color: #2196f3;
+}
+
+.mp3-secondary {
+    background-color: #4caf50;
+}
+
+.mp3-danger {
+    background-color: #f44336;
+}
+
+.mp3-warning {
+    background-color: #ff9800;
+}
+
+/* Hover effects */
+.mp3-btn:hover {
+    transform: scale(1.15);
+    filter: brightness(1.1);
+}
+
+
+
+/* Project 4 */
+/* Mini Project 4 - Animated Skill Bars */
+
+.mp4-skill-section {
+    max-width: 500px;
+    margin: 100px auto;
+    font-family: Arial, sans-serif;
+}
+
+.mp4-skill {
+    margin-bottom: 20px;
+}
+
+.mp4-skill span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.mp4-bar {
+    background: #e0e0e0;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mp4-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 10px;
+    transition: width 2s ease;
+}
+
+/* Skill colors */
+.mp4-html {
+    background: #ff5722;
+}
+
+.mp4-css {
+    background: #2196f3;
+}
+
+.mp4-js {
+    background: #fbc02d;
+}
+
+/* Active state (added by JS) */
+.mp4-active .mp4-html {
+    width: 90%;
+}
+
+.mp4-active .mp4-css {
+    width: 80%;
+}
+
+.mp4-active .mp4-js {
+    width: 70%;
+}
+
+
+
+/* Project 5 */
+/* Mini Project 5 - Flip Card Animation */
+
+.mp5-card-wrapper {
+    perspective: 1000px;
+    width: 200px;
+    margin: 50px auto;
+}
+
+.mp5-card {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.mp5-card-wrapper:hover .mp5-card {
+    transform: rotateY(180deg);
+}
+
+.mp5-card-front,
+.mp5-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 10px;
+    color: white;
+}
+
+.mp5-card-front {
+    background: #2196f3;
+}
+
+.mp5-card-back {
+    background: #4caf50;
+    transform: rotateY(180deg);
+}
+
+
+/* Project 6 */
+/* Mini Project 6 - Animated Loading Spinner */
+
+.mp6-loader-section {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+/* Circle Loader */
+.mp6-circle-loader {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ddd;
+    border-top: 5px solid #2196f3;
+    border-radius: 50%;
+    animation: mp6-spin 1s linear infinite;
+}
+
+/* Dots Loader */
+.mp6-dots-loader span {
+    width: 10px;
+    height: 10px;
+    background: #4caf50;
+    border-radius: 50%;
+    display: inline-block;
+    animation: mp6-bounce 1.2s infinite ease-in-out;
+}
+
+.mp6-dots-loader span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.mp6-dots-loader span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Bars Loader */
+.mp6-bars-loader span {
+    width: 6px;
+    height: 25px;
+    background: #ff9800;
+    display: inline-block;
+    animation: mp6-bars 1s infinite ease-in-out;
+}
+
+.mp6-bars-loader span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.mp6-bars-loader span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Animations */
+@keyframes mp6-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes mp6-bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+@keyframes mp6-bars {
+    0%, 100% {
+        height: 10px;
+    }
+    50% {
+        height: 30px;
+    }
+}
+
+
+/* Project 7 */
+/* Mini Project 7 - Text Typing Animation */
+
+.mp7-hero {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+}
+
+.mp7-text {
+    font-size: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid transparent;
+    width: 0;
+    animation: mp7-typing 4s steps(20) forwards;
+}
+
+/* Typing animation */
+@keyframes mp7-typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blinking cursor */
+.mp7-cursor {
+    margin-left: 5px;
+    animation: mp7-blink 1s infinite;
+}
+
+@keyframes mp7-blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+
+/* Project 8 */
+/* Mini Project 8 - Shimmer Effect on Cards */
+
+.mp8-card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Card */
+.mp8-card {
+    width: 220px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f0f0f0;
+}
+
+/* Shimmer blocks */
+.mp8-shimmer {
+    height: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: linear-gradient(
+        90deg,
+        #e0e0e0 25%,
+        #f5f5f5 37%,
+        #e0e0e0 63%
+    );
+    background-size: 400% 100%;
+    animation: mp8-shimmer 1.4s infinite;
+}
+
+.mp8-title {
+    height: 25px;
+}
+
+.mp8-line.short {
+    width: 60%;
+}
+
+/* Shimmer animation */
+@keyframes mp8-shimmer {
+    0% {
+        background-position: -400px 0;
+    }
+    100% {
+        background-position: 400px 0;
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <h3>Project 1:Progress bar</h3>
+    <div class="mp1-progress-container">
+    <div class="mp1-progress-bar"></div>
+</div>
+
+<h3>Project 2:Responsive Landing Page</h3>
+<div class="mp2-landing">
+    <h1 class="mp2-title">Welcome to Our Site</h1>
+    <p class="mp2-text">Simple responsive landing page</p>
+
+    <button class="mp2-btn">
+        Hover Me
+        <span class="mp2-tooltip">Click here!</span>
+    </button>
+
+    <!-- Modal -->
+    <div class="mp2-modal">
+        <div class="mp2-modal-box">
+            <p>This is an animated modal</p>
+        </div>
+    </div>
+</div>
+
+<h3>Project 3:Button Hover Effects</h3>
+<div class="mp3-btn-container">
+    <button class="mp3-btn mp3-primary">Primary Button</button>
+    <button class="mp3-btn mp3-secondary">Secondary Button</button>
+    <button class="mp3-btn mp3-danger">Danger Button</button>
+    <button class="mp3-btn mp3-warning">Warning Button</button>
+</div>
+
+<h3>Project 4:Animated Skill Bars</h3>
+<div class="mp4-skill-section" id="mp4-skills">
+    <h2>My Skills</h2>
+
+    <div class="mp4-skill">
+        <span>HTML</span>
+        <div class="mp4-bar">
+            <div class="mp4-fill mp4-html"></div>
+        </div>
+    </div>
+
+    <div class="mp4-skill">
+        <span>CSS</span>
+        <div class="mp4-bar">
+            <div class="mp4-fill mp4-css"></div>
+        </div>
+    </div>
+
+    <div class="mp4-skill">
+        <span>JavaScript</span>
+        <div class="mp4-bar">
+            <div class="mp4-fill mp4-js"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+window.addEventListener("scroll", function () {
+    const section = document.getElementById("mp4-skills");
+    const position = section.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 100) {
+        section.classList.add("mp4-active");
+    }
+});
+</script>
+
+
+<h3>Project 5:Flip card Animation</h3>
+    <div class="mp5-card-wrapper">
+    <div class="mp5-card">
+        <div class="mp5-card-front">
+            Front Side
+        </div>
+        <div class="mp5-card-back">
+            Back Side Content
+        </div>
+    </div>
+</div>
+
+
+<h3>Project 6: Animated Loading Spinner</h3>
+<div class="mp6-loader-section">
+
+    <!-- Circle Loader -->
+    <div class="mp6-circle-loader"></div>
+
+    <!-- Dots Loader -->
+    <div class="mp6-dots-loader">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Bars Loader -->
+    <div class="mp6-bars-loader">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</div>
+
+<h3>Project 7:Text Typing Animation</h3>
+<div class="mp7-hero">
+    <h1 class="mp7-text">
+        I am a Web Developer<span class="mp7-cursor">|</span>
+    </h1>
+</div>
+
+<h3>Project 8:Shimmer Effect on cards</h3>
+<div class="mp8-card-container">
+    <div class="mp8-card">
+        <div class="mp8-shimmer mp8-title"></div>
+        <div class="mp8-shimmer mp8-line"></div>
+        <div class="mp8-shimmer mp8-line short"></div>
+    </div>
+
+    <div class="mp8-card">
+        <div class="mp8-shimmer mp8-title"></div>
+        <div class="mp8-shimmer mp8-line"></div>
+        <div class="mp8-shimmer mp8-line short"></div>
+    </div>
+</div>
+
+
+</body>
+</html>
